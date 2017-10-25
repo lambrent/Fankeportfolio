@@ -78,20 +78,16 @@ passport.use(new LocalStrategy(
    	});
    });
   }));
-
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
-
 passport.deserializeUser(function(id, done) {
   User.getUserById(id, function(err, user) {
     done(err, user);
   });
 });
 
-router.post('/login',
-  passport.authenticate('local', {successRedirect:'/users/dashbord', failureRedirect:'/users/login',failureFlash: true}),
-  function(req, res) {
+router.post('/login', passport.authenticate('local', {successRedirect:'/users/dashbord', failureRedirect:'/users/login',failureFlash: true}), function(req, res) {
     res.redirect('/');
   });
 
@@ -100,7 +96,7 @@ router.get('/logout', function(req, res){
 
 	req.flash('success_msg', 'You are logged out');
 
-	res.redirect('/users/login');
+	res.redirect('/');
 });
 
 function ensureAuthenticated(req, res, next){

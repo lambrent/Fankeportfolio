@@ -12,8 +12,6 @@ var mongo = require('mongodb');
 
 var uri = 'mongodb://monvy:aca549ff8@ds233895.mlab.com:33895/fankedb';
 
-
-
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://monvy:aca549ff8@ds233895.mlab.com:33895/fankedb', {useMongoClient: true});
 mongoose.Promise = global.Promise;
