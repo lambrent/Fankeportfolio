@@ -2,8 +2,16 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var cloudinary = require('cloudinary');
 
 var User = require('../models/user');
+var Post = require('../models/post');
+
+cloudinary.config({
+    cloud_name: 'dce2vxir6',
+    api_key: '342272955573169',
+    api_secret: 'qGo3ndmoxzwP6oroIXs9YZj3OC4'
+});
 
 // Register
 router.get('/register', function(req, res){
@@ -15,8 +23,14 @@ router.get('/login', function(req, res){
 	res.render('login');
 });
 
+//Dashbord
 router.get('/dashbord', ensureAuthenticated, function(req, res){
     res.render('dashbord');
+});
+
+//Dashbord
+router.get('/newpost', ensureAuthenticated, function(req, res){
+    res.render('newpost');
 });
 
 // Register User

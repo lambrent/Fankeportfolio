@@ -1,0 +1,26 @@
+<script src="/js/newpost.js"></script>
+<h2 class="page-header">New Post</h2>
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" id="posttitle" class="form-control" placeholder="Title" name="title">
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea id="postdescription" class="form-control" placeholder="Description" rows="4" cols="50" name="description" ></textarea>
+    </div>
+    <div class="form-group">
+        <label>Image</label>
+        <input class="form-control-static" id="imagepath" name="myFile" type="file">
+        <div id="imagebox">
+        <img src="/images/no-image.png" width="200px">
+        <button class="btn btn-default" id="accimage">Upload Image</button>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+

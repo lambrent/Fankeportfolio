@@ -12,6 +12,7 @@
   "dependencies": {
     "bcryptjs": "*",
     "body-parser": "*",
+    "cloudinary": "^1.9.1",
     "connect-flash": "*",
     "cookie-parser": "^1.4.1",
     "express": "*",
@@ -26,6 +27,6 @@
     "passport-local": "*"
   },
   "engines": {
-    "node":"6.10.1"
+    "node": "6.10.1"
   }
 }
